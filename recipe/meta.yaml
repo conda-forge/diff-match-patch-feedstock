@@ -5,20 +5,18 @@ package:
   version: {{ version }}
 
 source:
-  fn: diff-match-patch-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-{{ version }}.tar.gz
   sha256: a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
+    - pip
   run:
     - python
 
@@ -28,9 +26,9 @@ test:
 
 about:
   home: http://code.google.com/p/google-diff-match-patch/
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE
-  summary: 'The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.'
+  summary: 'Diff Match Patch is a high-performance library in multiple languages that manipulates plain text'
 
 extra:
   recipe-maintainers:
