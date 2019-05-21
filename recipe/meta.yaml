@@ -1,24 +1,22 @@
-{% set version = "20121119" %}
+{% set version = "20181111" %}
 
 package:
   name: diff-match-patch
   version: {{ version }}
 
 source:
-  fn: diff-match-patch-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-{{ version }}.tar.gz
-  sha256: 9dba5611fbf27893347349fd51cc1911cb403682a7163373adacc565d11e2e4c
+  sha256: a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
+    - pip
   run:
     - python
 
@@ -28,10 +26,11 @@ test:
 
 about:
   home: http://code.google.com/p/google-diff-match-patch/
-  license: Apache 2.0
-  license_file: LICENCE
-  summary: 'The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.'
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: 'Diff Match Patch is a high-performance library in multiple languages that manipulates plain text'
 
 extra:
   recipe-maintainers:
     - ocefpaf
+    - ccordoba12
