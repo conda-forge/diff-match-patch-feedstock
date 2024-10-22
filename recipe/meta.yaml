@@ -1,12 +1,12 @@
-{% set version = "20230430" %}
+{% set version = "20241021" %}
 
 package:
   name: diff-match-patch
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-{{ version }}.tar.gz
-  sha256: 953019cdb9c9d2c9e47b5b12bcff3cf4746fc4598eb406076fa1fc27e6a1f15c
+  url: https://pypi.io/packages/source/d/diff-match-patch/diff_match_patch-{{ version }}.tar.gz
+  sha256: beae57a99fa48084532935ee2968b8661db861862ec82c6f21f4acdd6d835073
 
 build:
   noarch: python
